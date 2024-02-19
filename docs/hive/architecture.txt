@@ -1,0 +1,77 @@
+If issue with IP address
+Solution:
+VB -> file -> Host network manager -> new host manager and go to setting -> network -> adapter settings, then change newly created host manager.
+
+28th Aug Live Class: 
+LFS (Local file system): saving file in local.
+HDFS (Hadoop Distributed File System)
+
+Question may mask from Cloudera admin side:
+Cloudera Manager
+What is total number of nodes used?
+What was the configuration of the node?
+
+Hue: UI interface to access each and every service and execute queries
+-	Username: cloudera
+-	Password: cloudera
+
+To write queries:  Query -> Editor -> Hive
+Instead of this, we can use CLI by just typing ‘hive’
+To schedule: (OOZIE), Query -> Editor -> Schedule
+
+We know also user Airflow external to schedule.
+
+Let’s talk about CLI (Difference between LFS and DFS)
+Ls – list out of the folders and files (not all of the files available in HDFS)
+
+Hadoop fs -ls /           = to list all the files and folders in the Hadoop file directory 
+Always append Hadoop fs before linux commands to execute Hadoop commands
+Create test file in LFS:
+Vi test.txt
+Content: this is my local test file
+
+If file is stored in the LFS, it cannot create replica. So, we need to store in the file in the Hadoop file system to create replica’s
+
+Copy file from LFS to HDFS:
+Hadoop fs -copyFromLocal test.txt /
+Hadoop fs -copyFromLocal test.txt /tmp
+
+To check file copied : Hadoop fs -ls /tmp
+
+==== enter ipconfig to get ipaddress of the machine and enter in putty to get access of the system
+
+Copy from HDFS to LFS:
+Hadoop fs -copyToLocal /test.txt /
+
+Hadoop fs -chmod 777 /test.txt
+
+If name node is safe mode, you have to restart the services. 
+
+Remember the version of the Hadoop version, in interview they may ask you? Command Hadoop version
+History -> command to used to list down all the executed commands
+
+
+
+
+
+Vi test2.txt 
+Cat test2.txt
+
+We can use put and get to copy and copy files from LFS to HDFS
+Hadoop fs -put test2.txt /sudh
+Hadoop fs -get /sudh/tet2.txt /sudh
+
+
+Move file from HDFS to HDFS 
+Hadoop fs -mv ‘source_file’ ‘destionation_path’
+
+Sudo su  super user
+Hdfs fsck /      = give health status
+
+
+Hive: Data warehousing service
+Data warehousing -> we are allowed to store the structured data
+Data lake: store raw(any kind of data)
+
+
+
